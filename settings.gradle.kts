@@ -11,8 +11,8 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        id("com.android.application") version "8.5.1" // Updated AGP version
-        id("org.jetbrains.kotlin.android") version "1.9.10" // Updated Kotlin plugin version
+        id("com.android.application") version "8.5.2"
+        id("org.jetbrains.kotlin.android") version "1.9.10"
     }
 }
 dependencyResolutionManagement {
