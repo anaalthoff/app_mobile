@@ -22,22 +22,39 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textEditarExercicios"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Editar Exercícios"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:textSize="20sp"
-                android:textColorHint="#2D3B6E"
-                android:textStyle="bold"/>
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textEditarExercicios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editar_exercícios"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    android:textColorHint="#2D3B6E"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_close_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textEditarExercicios"
+                    android:layout_marginEnd="15dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textSubCadastroExercicios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Verifique os dados abaixo"
+                android:hint="@string/verifique_os_dados_abaixo"
                 android:layout_marginStart="15dp"
                 android:textSize="14sp"
                 android:textColorHint="#2D3B6E"/>
@@ -46,7 +63,7 @@
                 android:id="@+id/titleNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nome"
+                android:hint="@string/nome"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:textSize="16sp"
@@ -71,7 +88,7 @@
                     android:id="@+id/textNome"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:hint="Nome do exercício"
+                    android:hint="@string/nome_do_exercício"
                     android:background="@drawable/text_input_background"
                     android:textSize="16sp"/>
 
@@ -81,7 +98,7 @@
                 android:id="@+id/titleImagem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Imagem"
+                android:hint="@string/imagem"
                 android:layout_marginStart="15dp"
                 android:textSize="16sp"
                 android:textColorHint="#2D3B6E"/>
@@ -105,7 +122,7 @@
                     android:id="@+id/textImagem"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="Link da imagem"
+                    android:hint="@string/link_da_imagem"
                     android:background="@drawable/text_input_background"
                     android:textSize="16sp"
                     android:inputType="textUri"/>
@@ -117,7 +134,8 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:background="#D9D9D9"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:contentDescription="@string/imagem_do_exercício" />
 
         </LinearLayout>
 
@@ -133,7 +151,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Salvar"
+                android:hint="@string/salvar"
                 android:textColorHint="@color/white"
                 android:textSize="14sp"
                 app:cornerRadius="10dp"
@@ -144,7 +162,7 @@
                 android:id="@+id/buttonExcluir"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:hint="Excluir"
+                android:hint="@string/excluir"
                 android:textColorHint="@color/white"
                 android:textSize="14sp"
                 app:cornerRadius="10dp"

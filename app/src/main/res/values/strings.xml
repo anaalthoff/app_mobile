@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Gym</string>
+    <string name="ir_para_painel_de_treino">Ir para Painel de Treino</string>
+    <string name="painel">Painel</string>
+    <string name="exercicios">Exercícios</string>
+    <string name="meus_exercícios">Meus Exercícios</string>
+    <string name="abdominal_canivete">Abdominal Canivete</string>
+    <string name="supino_máquina">Supino Máquina</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="editar_exercícios">Editar Exercícios</string>
+    <string name="verifique_os_dados_abaixo">Verifique os dados abaixo</string>
+    <string name="nome">Nome</string>
+    <string name="nome_do_exercício">Nome do exercício</string>
+    <string name="imagem">Imagem</string>
+    <string name="link_da_imagem">Link da imagem</string>
+    <string name="imagem_do_exercício">Imagem do exercício</string>
+    <string name="salvar">Salvar</string>
+    <string name="excluir">Excluir</string>
+    <string name="meu_treino">Meu Treino</string>
+    <string name="continuar">Continuar</string>
+    <string name="treino">Treino</string>
+    <string name="cadastrar_exercícios">Cadastrar Exercícios</string>
+    <string name="insira_os_dados_abaixo">Insira os dados abaixo</string>
+    <string name="nome_exercicio">Nome</string>
+    <string name="nome_do_exercício_placeholder">Nome do exercício</string>
+    <string name="imagem_exercicio">Imagem</string>
+    <string name="link_da_imagem_exercicio">Link da imagem</string>
+    <string name="salvar_exercicio">Salvar</string>
+    <string name="imagem_do_exercício_cadastro">Imagem do exercício</string>
 </resources>

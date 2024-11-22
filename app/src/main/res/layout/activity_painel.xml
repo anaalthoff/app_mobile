@@ -28,7 +28,7 @@
                 android:id="@+id/textPainel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Painel"
+                android:hint="@string/painel"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:textSize="20sp"
@@ -43,14 +43,28 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:id="@+id/textExercicio"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Exercícios"
-                android:layout_marginStart="15dp"
-                android:textColorHint="#2D3B6E"
-                android:textSize="16sp"/>
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/setaExercicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/baseline_keyboard_double_arrow_right_24"
+                    android:layout_marginStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/textExercicio"
+                    android:layout_width="242dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:hint="@string/exercicios"
+                    android:textColorHint="#2D3B6E"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="wrap_content"
@@ -60,14 +74,27 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/setaTreino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/baseline_keyboard_double_arrow_right_24"
+                android:layout_marginStart="15dp" />
+
             <TextView
                 android:id="@+id/textTreino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Treino"
+                android:hint="@string/treino"
                 android:layout_marginStart="15dp"
                 android:textColorHint="#2D3B6E"
                 android:textSize="16sp"/>
+
+        </LinearLayout>
 
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="wrap_content"

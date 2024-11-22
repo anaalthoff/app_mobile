@@ -11,12 +11,12 @@
     android:background="@color/white">
 
     <TextView
-        android:id="@+id/editModelo"
+        android:id="@+id/textModelo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="20dp"
-        android:hint="Meu Treino"
+        android:hint="@string/meu_treino"
         android:textSize="30sp"
         android:textColorHint="#2D3B6E"
         android:textStyle="bold"
@@ -33,7 +33,7 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="20dp"
-        android:hint="Continuar"
+        android:hint="@string/continuar"
         android:textColorHint="@color/white"
         android:textSize="14sp"
         app:cornerRadius="10dp"
