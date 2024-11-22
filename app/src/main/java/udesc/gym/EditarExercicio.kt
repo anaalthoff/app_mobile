@@ -1,15 +1,29 @@
 package udesc.gym
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import udesc.gym.databinding.ActivityEditarExercicioBinding
 
 class EditarExercicio : AppCompatActivity() {
+
+    private lateinit var binding: ActivityEditarExercicioBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_editar_exercicio)
+        binding = ActivityEditarExercicioBinding.inflate(layoutInflater)
+        setContentView(binding.main)
+
+        // Cria um OnClickListener que chama finish()
+        val finishListener = View.OnClickListener {
+            finish()
+        }
+
+        // Atribui o mesmo listener a todos os botões
+        binding.cancelButton.setOnClickListener(finishListener)
+        binding.buttonSalvar.setOnClickListener(finishListener)
+        binding.buttonExcluir.setOnClickListener(finishListener)
     }
 }

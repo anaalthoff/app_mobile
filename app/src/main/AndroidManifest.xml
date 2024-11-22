@@ -16,7 +16,7 @@
             android:name=".EditarExercicio"
             android:exported="false" />
         <activity
-            android:name=".CadastroExercicio"
+            android:name=".CadastrarExercicio"
             android:exported="false" />
         <activity
             android:name=".Exercicios"
