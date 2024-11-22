@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroExercicio"
+    tools:context=".EditarExercicio"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -23,10 +23,10 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textCadastroExercicios"
+                android:id="@+id/textEditarExercicios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Cadastrar Exercícios"
+                android:hint="Editar Exercícios"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:textSize="20sp"
@@ -37,7 +37,7 @@
                 android:id="@+id/textSubCadastroExercicios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Insira os dados abaixo"
+                android:hint="Verifique os dados abaixo"
                 android:layout_marginStart="15dp"
                 android:textSize="14sp"
                 android:textColorHint="#2D3B6E"/>
@@ -121,19 +121,37 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/buttonSalvar"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:hint="Salvar"
-            android:textColorHint="@color/white"
-            android:textSize="14sp"
-            app:cornerRadius="10dp"
-            app:backgroundTint="#2D3B6E"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_gravity="bottom|center"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="30dp">
 
+            <Button
+                android:id="@+id/buttonSalvar"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Salvar"
+                android:textColorHint="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="10dp"
+                app:backgroundTint="#A0A0A0"
+                android:layout_gravity="center" />
+
+            <Button
+                android:id="@+id/buttonExcluir"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:hint="Excluir"
+                android:textColorHint="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="10dp"
+                app:backgroundTint="#BE2E2E"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
