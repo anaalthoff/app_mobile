@@ -24,7 +24,7 @@ class Painel : AppCompatActivity() {
 
         // Define o OnClickListener para múltiplos elementos
         val navigateListener = View.OnClickListener {
-            val intent = Intent(this, Exercicios::class.java)
+            val intent = Intent(this, MeusExercicios::class.java)
             startActivity(intent)
         }
 

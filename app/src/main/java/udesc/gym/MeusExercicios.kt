@@ -5,18 +5,18 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import udesc.gym.databinding.ActivityExerciciosBinding
+import udesc.gym.databinding.ActivityMeusExerciciosBinding
 
 class MeusExercicios : AppCompatActivity() {
 
-    private lateinit var binding: ActivityExerciciosBinding
+    private lateinit var binding: ActivityMeusExerciciosBinding
     private val listaExercicios = ArrayList<Exercicio>() // Lista de objetos Exercicio
     private lateinit var adapter: ArrayAdapter<Exercicio>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityExerciciosBinding.inflate(layoutInflater)
+        binding = ActivityMeusExerciciosBinding.inflate(layoutInflater)
         setContentView(binding.main)
 
         // se colocar uma nova intent, vai ficar criando intents, telas. Então o finish fecha essa Activity e volta pro ponto anterior

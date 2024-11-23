@@ -19,7 +19,7 @@
             android:name=".CadastrarExercicio"
             android:exported="false" />
         <activity
-            android:name=".Exercicios"
+            android:name=".MeusExercicios"
             android:exported="false" />
         <activity
             android:name=".Painel"
