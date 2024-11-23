@@ -74,7 +74,7 @@
                 android:layout_marginEnd="15dp"                >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textNome"
+                    android:id="@+id/textNomeExercicio"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="@string/nome_do_exercício_placeholder"
@@ -84,7 +84,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/imagem"
+                android:id="@+id/imagemExercicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#662D3B6E"
@@ -97,7 +97,7 @@
                 android:layout_marginEnd="15dp" >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textImagem"
+                    android:id="@+id/textImagemExercicio"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="@string/link_da_imagem_exercicio"
