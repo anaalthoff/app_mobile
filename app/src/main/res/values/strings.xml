@@ -28,4 +28,7 @@
     <string name="salvar_exercicio">Salvar</string>
     <string name="imagem_do_exercício_cadastro">Imagem do exercício</string>
     <string name="comecar">Começar</string>
+    <string name="tirar_foto">Tirar Foto</string>
+    <string name="escolher_da_galeria">Escolher da Galeria</string>
+    <string name="nome_do_exercicio">Nome do exercício</string>
 </resources>

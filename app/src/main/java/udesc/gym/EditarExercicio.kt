@@ -6,11 +6,13 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import udesc.gym.databinding.ActivityEditarExercicioBinding
+import android.net.Uri
 
 class EditarExercicio : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditarExercicioBinding
-    private var nomeOriginal: String? = null
+    private var nomeOriginal: String? = null // Declarando a variável corretamente
+    private var uriImagemOriginal: Uri? = null // Guardar o URI original da imagem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,12 @@ class EditarExercicio : AppCompatActivity() {
         binding.textNomeExercicio.setText(nomeOriginal)
         binding.textImagemExercicio.setText(linkImagemOriginal)
 
+        // Se você tiver o URI da imagem salvo, exibe a imagem
+        if (linkImagemOriginal != null) {
+            uriImagemOriginal = Uri.parse(linkImagemOriginal)
+            binding.imageView.setImageURI(uriImagemOriginal) // Exibe a imagem
+        }
+
         // Botão Salvar
         binding.buttonSalvar.setOnClickListener {
             val novoNome = binding.textNomeExercicio.text.toString().trim()
@@ -57,6 +65,7 @@ class EditarExercicio : AppCompatActivity() {
             finish()
         }
     }
+
     // Atualiza o exercício no SharedPreferences
     private fun atualizarExercicio(nomeAntigo: String, novoNome: String, novoLink: String) {
         val sharedPreferences = getSharedPreferences("dados", MODE_PRIVATE)

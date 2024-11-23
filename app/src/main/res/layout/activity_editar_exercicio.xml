@@ -87,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#662D3B6E"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="10dp"
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
@@ -105,11 +105,25 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Button
+                android:id="@+id/buttonCamera"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/tirar_foto"
+                android:textColorHint="@color/white"
+                android:textSize="14sp"
+                app:cornerRadius="10dp"
+                app:backgroundTint="#2D3B6E"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="10dp"/>
+
+
             <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="250dp"
-                android:layout_height="200dp"
+                android:layout_height="190dp"
                 android:layout_gravity="center"
-                android:background="#D9D9D9"
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/imagem_do_exercício" />
 
