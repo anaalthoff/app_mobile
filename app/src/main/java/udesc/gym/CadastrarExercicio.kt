@@ -36,6 +36,9 @@ class CadastrarExercicio : AppCompatActivity() {
                 if (savedImageUri != null) {
                     selectedImageUri = savedImageUri // Armazena o URI para uso futuro
                     binding.imageView.setImageBitmap(photo) // Mostra a foto na tela
+                    binding.textImagemExercicio.setText(savedImageUri.toString()) // Exibe o caminho da imagem no campo de texto
+                } else {
+                    Toast.makeText(this, "Erro ao salvar a imagem", Toast.LENGTH_SHORT).show()
                 }
             }
         }
