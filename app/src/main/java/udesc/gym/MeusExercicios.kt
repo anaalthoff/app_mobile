@@ -1,6 +1,5 @@
 package udesc.gym
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -8,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import udesc.gym.databinding.ActivityExerciciosBinding
 
-class Exercicios : AppCompatActivity() {
+class MeusExercicios : AppCompatActivity() {
 
     private lateinit var binding: ActivityExerciciosBinding
     private val listaExercicios = ArrayList<Exercicio>() // Lista de objetos Exercicio
