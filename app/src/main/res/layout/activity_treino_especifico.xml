@@ -1,50 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="10dp">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/white">
 
-    <ImageView
-        android:id="@+id/imageViewExercicio"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="10dp"
-        android:contentDescription="@string/imagem_do_exercicio" />
+    <!-- Título "Painel" adicionado -->
+    <TextView
+        android:id="@+id/textPainel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/painel"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:textColorHint="#2D3B6E"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"/>
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textViewNomeTreino"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Nome do Treino"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewNomeExercicio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome do Exercício"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/textViewNomeTreino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Treino"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textViewSeries"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Séries"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/textViewNomeExercicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Exercício"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/textViewRepeticoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Repetições"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/textViewSeries"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Séries"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textViewRepeticoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repetições"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewExercicio"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/imagem_do_exercicio" />
     </LinearLayout>
+
 </LinearLayout>
