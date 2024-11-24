@@ -60,7 +60,7 @@
             <ListView
                 android:id="@+id/listViewTreinos"
                 android:layout_width="match_parent"
-                android:layout_height="645dp"
+                android:layout_height="400dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"/>

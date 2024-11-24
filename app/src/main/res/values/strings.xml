@@ -9,6 +9,7 @@
     <string name="supino_máquina">Supino Máquina</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="editar_exercícios">Editar Exercícios</string>
+    <string name="editar_treinos">Editar Treinos</string>
     <string name="verifique_os_dados_abaixo">Verifique os dados abaixo</string>
     <string name="nome">Nome</string>
     <string name="nome_do_exercício">Nome do exercício</string>
@@ -24,6 +25,7 @@
     <string name="cadastrar_treinos">Cadastrar Treinos</string>
     <string name="insira_os_dados_abaixo">Insira os dados abaixo</string>
     <string name="nome_exercicio">Nome</string>
+    <string name="nome_treino">Nome</string>
     <string name="nome_do_exercício_placeholder">Nome do exercício</string>
     <string name="imagem_exercicio">Imagem</string>
     <string name="link_da_imagem_exercicio">Link da imagem</string>

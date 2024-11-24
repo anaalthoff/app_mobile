@@ -38,14 +38,14 @@ class MeusTreinos : AppCompatActivity() {
         carregarTreinos()
 
         // Configura o listener de clique
-//        binding.listViewTreinos.setOnItemClickListener { _, _, position, _ ->
-//            val treinoSelecionado = listaTreinos[position]
-//
-//            // Passa os dados do exercício para a tela de edição
-//            val intent = Intent(this, EditarTreino::class.java)
-//            intent.putExtra("NOME_EXERCICIO", treinoSelecionado.nome)
-//            startActivity(intent)
-//        }
+        binding.listViewTreinos.setOnItemClickListener { _, _, position, _ ->
+            val treinoSelecionado = listaTreinos[position]
+
+            // Passa os dados do exercício para a tela de edição
+            val intent = Intent(this, EditarTreino::class.java)
+            intent.putExtra("NOME_TREINO", treinoSelecionado.nome)
+            startActivity(intent)
+        }
     }
 
     // Atualiza a tela com o novo exercício cadastrado
@@ -63,8 +63,7 @@ class MeusTreinos : AppCompatActivity() {
         exerciciosSalvos.split("\n").filter { it.isNotEmpty() }.forEach {
             val partes = it.split(" - ")
             val nome = partes.getOrNull(0) ?: ""
-            println(nome)
-            listaTreinos.add(Treino(nome, ArrayList<Exercicio>()))
+            listaTreinos.add(Treino(nome))
         }
 
         adapter.notifyDataSetChanged()
