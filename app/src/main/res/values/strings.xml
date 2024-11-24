@@ -29,6 +29,7 @@
     <string name="imagem_do_exercício_cadastro">Imagem do exercício</string>
     <string name="configuracoes">Configurar Treinos</string>
     <string name="executar_treino">Executar Treino</string>
+    <string name="selecionar_treino">Selecione o treino que quer fazer</string>
     <string name="tirar_foto">Tirar Foto</string>
     <string name="escolher_da_galeria">Escolher da Galeria</string>
     <string name="nome_do_exercicio">Nome do exercício</string>
