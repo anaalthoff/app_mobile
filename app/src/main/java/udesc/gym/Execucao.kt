@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 data class Execucao(val treino: Treino, val dataHoraExecucao: String = getDateTime()) {
-
     companion object {
         private fun getDateTime(): String {
             val dateFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss")
@@ -12,7 +11,4 @@ data class Execucao(val treino: Treino, val dataHoraExecucao: String = getDateTi
             return dateFormat.format(date)
         }
     }
-
-
-
 }

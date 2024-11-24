@@ -27,6 +27,12 @@
             android:name=".CadastrarExercicio"
             android:exported="false" />
         <activity
+            android:name=".CadastrarTreino"
+            android:exported="false" />
+        <activity
+            android:name=".MeusTreinos"
+            android:exported="false" />
+        <activity
             android:name=".MeusExercicios"
             android:exported="false" />
         <activity
