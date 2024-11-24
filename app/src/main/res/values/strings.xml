@@ -4,6 +4,7 @@
     <string name="painel">Painel</string>
     <string name="exercicios">Exercícios</string>
     <string name="meus_exercícios">Meus Exercícios</string>
+    <string name="meus_treinos">Meus Treinos</string>
     <string name="abdominal_canivete">Abdominal Canivete</string>
     <string name="supino_máquina">Supino Máquina</string>
     <string name="cadastrar">Cadastrar</string>
@@ -18,8 +19,9 @@
     <string name="excluir">Excluir</string>
     <string name="meu_treino">Meu Treino</string>
     <string name="continuar">Continuar</string>
-    <string name="treino">Treino</string>
+    <string name="treinos">Treinos</string>
     <string name="cadastrar_exercícios">Cadastrar Exercícios</string>
+    <string name="cadastrar_treinos">Cadastrar Treinos</string>
     <string name="insira_os_dados_abaixo">Insira os dados abaixo</string>
     <string name="nome_exercicio">Nome</string>
     <string name="nome_do_exercício_placeholder">Nome do exercício</string>
@@ -33,4 +35,5 @@
     <string name="tirar_foto">Tirar Foto</string>
     <string name="escolher_da_galeria">Escolher da Galeria</string>
     <string name="nome_do_exercicio">Nome do exercício</string>
+    <string name="nome_do_treino">Nome do treino</string>
 </resources>
