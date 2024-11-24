@@ -10,8 +10,9 @@ import udesc.gym.databinding.ActivityMeusExerciciosBinding
 class MeusExercicios : AppCompatActivity() {
 
     private lateinit var binding: ActivityMeusExerciciosBinding
-    private val listaExercicios = ArrayList<Exercicio>() // Lista de objetos Exercicio
+    private lateinit var dbHelper: DBHelper
     private lateinit var adapter: ArrayAdapter<Exercicio>
+    private val listaExercicios = ArrayList<Exercicio>() // Lista de objetos Exercicio
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,8 @@ class MeusExercicios : AppCompatActivity() {
 
         // se colocar uma nova intent, vai ficar criando intents, telas. Então o finish fecha essa Activity e volta pro ponto anterior
         binding.cancelButton.setOnClickListener { finish() }
+
+        dbHelper = DBHelper(this)
 
         binding.buttonCadastrar.setOnClickListener {
             // intent é o recurso de mudar de tela
@@ -43,6 +46,7 @@ class MeusExercicios : AppCompatActivity() {
 
             // Passa os dados do exercício para a tela de edição
             val intent = Intent(this, EditarExercicio::class.java)
+            intent.putExtra("ID_EXERCICIO", exercicioSelecionado.id)
             intent.putExtra("NOME_EXERCICIO", exercicioSelecionado.nome)
             intent.putExtra("LINK_IMG_EXERCICIO", exercicioSelecionado.linkImagem)
             startActivity(intent)
@@ -56,18 +60,8 @@ class MeusExercicios : AppCompatActivity() {
     }
 
     private fun carregarExercicios() {
-        val sharedPreferences = getSharedPreferences("dados", MODE_PRIVATE)
-        val exerciciosSalvos = sharedPreferences.getString("lista_exercicios", "").orEmpty()
-
         listaExercicios.clear() // Limpa a lista antes de carregar novamente
-
-        exerciciosSalvos.split("\n").filter { it.isNotEmpty() }.forEach {
-            val partes = it.split(" - ")
-            val nome = partes.getOrNull(0) ?: ""
-            val linkImagem = partes.getOrNull(1) ?: ""
-            listaExercicios.add(Exercicio(nome, linkImagem))
-        }
-
+        listaExercicios.addAll(dbHelper.exerciciosSelectAll())
         adapter.notifyDataSetChanged()
     }
 }

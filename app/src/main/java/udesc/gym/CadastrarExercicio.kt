@@ -23,6 +23,7 @@ import java.io.IOException
 class CadastrarExercicio : AppCompatActivity() {
 
     private lateinit var binding: ActivityCadastrarExercicioBinding
+    private lateinit var dbHelper: DBHelper
     private var selectedImageUri: Uri? = null
 
     // Registrando contratos de atividade
@@ -49,47 +50,35 @@ class CadastrarExercicio : AppCompatActivity() {
         binding = ActivityCadastrarExercicioBinding.inflate(layoutInflater)
         setContentView(binding.main)
 
+        dbHelper = DBHelper(this)
+
         // Configurações para botões da câmera e galeria
         binding.buttonCamera.setOnClickListener { openCamera() }
 
         // se colocar uma nova intent, vai ficar criando intents, telas. Então o finish fecha essa Activity e volta pro ponto anterior
         binding.cancelButton.setOnClickListener { finish() }
 
-        // Inicializa o SharedPreferences
-        val sharedPreferences = getSharedPreferences("dados", MODE_PRIVATE)
-
         // Botão para salvar os dados
         binding.buttonSalvar.setOnClickListener {
             val nomeExercicio = binding.textNomeExercicio.text.toString().trim()
             val linkImgExercicio = binding.textImagemExercicio.text.toString().trim()
 
-            // Validação simples: o nome do exercício é obrigatório
+            // Validação: Nome do exercício é obrigatório
             if (nomeExercicio.isNotEmpty()) {
-                // Recupera os exercícios já salvos
-                var exerciciosSalvos = sharedPreferences.getString("lista_exercicios", "").orEmpty()
+                // Insere o exercício no banco de dados
+                val resultado = dbHelper.exercicioInsert(nomeExercicio, linkImgExercicio)
 
-                // Adiciona o novo exercício no formato: "Nome - LinkImagem"
-                if (exerciciosSalvos.isNotEmpty()) {
-                    exerciciosSalvos += "\n" // Adiciona uma quebra de linha entre os exercícios
-                }
+                if (resultado != -1L) { // Retorno -1 indica erro no insert
+                    Toast.makeText(this, "Exercício salvo com sucesso!", Toast.LENGTH_SHORT).show()
 
-                // Adiciona apenas o nome do exercício se o link estiver vazio
-                exerciciosSalvos += if (linkImgExercicio.isNotEmpty()) {
-                    "$nomeExercicio - $linkImgExercicio"
+                    // Limpa os campos
+                    binding.textNomeExercicio.setText("")
+                    binding.textImagemExercicio.setText("")
+
+                    finish() // Finaliza a Activity e volta para a lista
                 } else {
-                    nomeExercicio
+                    Toast.makeText(this, "Erro ao salvar o exercício.", Toast.LENGTH_SHORT).show()
                 }
-
-                // Salva os exercícios atualizados no SharedPreferences
-                val editor = sharedPreferences.edit()
-                editor.putString("lista_exercicios", exerciciosSalvos)
-                editor.apply()
-
-                // Exibe mensagem de sucesso e limpa os campos
-                Toast.makeText(this, "Exercício salvo com sucesso!", Toast.LENGTH_SHORT).show()
-                binding.textNomeExercicio.setText("")
-                binding.textImagemExercicio.setText("")
-                finish() // Finaliza a Activity e volta para a lista
             } else {
                 // Exibe uma mensagem de erro se o campo nome estiver vazio
                 Toast.makeText(

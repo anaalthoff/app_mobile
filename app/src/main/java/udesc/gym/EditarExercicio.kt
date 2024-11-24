@@ -19,8 +19,8 @@ import java.io.IOException
 class EditarExercicio : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditarExercicioBinding
-    private var nomeOriginal: String? = null
-    private var uriImagemOriginal: Uri? = null // Guardar o URI original da imagem
+    private lateinit var dbHelper: DBHelper
+    private var exercicioId: Int = 0 // ID do exercício para operações no banco
 
     // Registrar o launcher para abrir a câmera
     private val cameraLauncher =
@@ -30,7 +30,8 @@ class EditarExercicio : AppCompatActivity() {
                 val savedImageUri = saveImageToStorage(photo)
 
                 if (savedImageUri != null) {
-                    uriImagemOriginal = savedImageUri // Atualiza o URI da imagem
+                    // Atualiza o URI da imagem
+                    // uriImagemOriginal = savedImageUri
                     binding.imageView.setImageBitmap(photo) // Exibe a nova foto
                     binding.textImagemExercicio.setText(savedImageUri.toString()) // Atualiza o campo de texto com o URI
                 } else {
@@ -45,28 +46,22 @@ class EditarExercicio : AppCompatActivity() {
         binding = ActivityEditarExercicioBinding.inflate(layoutInflater)
         setContentView(binding.main)
 
-        // Cria um OnClickListener que chama finish()
-        val finishListener = View.OnClickListener {
-            finish()
-        }
+        dbHelper = DBHelper(this)
 
-        // Atribui o mesmo listener a todos os botões
-        binding.cancelButton.setOnClickListener(finishListener)
-        binding.buttonSalvar.setOnClickListener(finishListener)
-        binding.buttonExcluir.setOnClickListener(finishListener)
+        binding.cancelButton.setOnClickListener { finish() }
 
         // Recupera os dados enviados pela Intent
-        nomeOriginal = intent.getStringExtra("NOME_EXERCICIO")
-        val linkImagemOriginal = intent.getStringExtra("LINK_IMG_EXERCICIO")
+        exercicioId = intent.getIntExtra("ID_EXERCICIO", -1)
+        val nomeExercicio = intent.getStringExtra("NOME_EXERCICIO") ?: ""
+        val linkImagem = intent.getStringExtra("LINK_IMG_EXERCICIO") ?: ""
 
         // Preenche os campos com os dados do exercício selecionado
-        binding.textNomeExercicio.setText(nomeOriginal)
-        binding.textImagemExercicio.setText(linkImagemOriginal)
+        binding.textNomeExercicio.setText(nomeExercicio)
+        binding.textImagemExercicio.setText(linkImagem)
 
         // Se tiver o URI da imagem salvo, exibe a imagem
-        if (linkImagemOriginal != null) {
-            uriImagemOriginal = Uri.parse(linkImagemOriginal)
-            binding.imageView.setImageURI(uriImagemOriginal) // Exibe a imagem
+        if (linkImagem.isNotEmpty()) {
+            binding.imageView.setImageURI(Uri.parse(linkImagem))
         }
 
         // Botão Salvar
@@ -75,7 +70,7 @@ class EditarExercicio : AppCompatActivity() {
             val novoLink = binding.textImagemExercicio.text.toString().trim()
 
             if (novoNome.isNotEmpty()) {
-                atualizarExercicio(nomeOriginal.orEmpty(), novoNome, novoLink)
+                atualizarExercicio(exercicioId, novoNome, novoLink)
                 Toast.makeText(this, "Exercício atualizado com sucesso!", Toast.LENGTH_SHORT).show()
                 finish()
             } else {
@@ -85,7 +80,7 @@ class EditarExercicio : AppCompatActivity() {
 
         // Botão Excluir
         binding.buttonExcluir.setOnClickListener {
-            excluirExercicio(nomeOriginal.orEmpty())
+            excluirExercicio(exercicioId)
             Toast.makeText(this, "Exercício excluído com sucesso!", Toast.LENGTH_SHORT).show()
             finish()
         }
@@ -123,36 +118,23 @@ class EditarExercicio : AppCompatActivity() {
         }
     }
 
-    // Atualiza o exercício no SharedPreferences
-    private fun atualizarExercicio(nomeAntigo: String, novoNome: String, novoLink: String) {
-        val sharedPreferences = getSharedPreferences("dados", MODE_PRIVATE)
-        val exerciciosSalvos = sharedPreferences.getString("lista_exercicios", "").orEmpty()
-        val exerciciosAtualizados = exerciciosSalvos.split("\n").joinToString("\n") { linha ->
-            val partes = linha.split(" - ")
-            val nome = partes.getOrNull(0) ?: ""
-            val link = partes.getOrNull(1) ?: ""
-            if (nome == nomeAntigo) "$novoNome - $novoLink" else "$nome - $link"
+    // Atualiza o exercício no banco de dados
+    private fun atualizarExercicio(id: Int, novoNome: String, novoLink: String) {
+        val resultado = dbHelper.exercicioUpdate(id, novoNome, novoLink)
+        if (resultado > 0) {
+            Toast.makeText(this, "Exercício atualizado com sucesso!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Erro ao atualizar o exercício.", Toast.LENGTH_SHORT).show()
         }
-
-        val editor = sharedPreferences.edit()
-        editor.putString("lista_exercicios", exerciciosAtualizados)
-        editor.apply()
     }
 
-    // Exclui o exercício no SharedPreferences
-    private fun excluirExercicio(nome: String) {
-        val sharedPreferences = getSharedPreferences("dados", MODE_PRIVATE)
-        val exerciciosSalvos = sharedPreferences.getString("lista_exercicios", "").orEmpty()
-        val exerciciosAtualizados = exerciciosSalvos.split("\n")
-            .filter { linha ->
-                val partes = linha.split(" - ")
-                val nomeAtual = partes.getOrNull(0) ?: ""
-                nomeAtual != nome
-            }
-            .joinToString("\n")
-
-        val editor = sharedPreferences.edit()
-        editor.putString("lista_exercicios", exerciciosAtualizados)
-        editor.apply()
+    // Exclui o exercício no banco de dados
+    private fun excluirExercicio(id: Int) {
+        val resultado = dbHelper.exercicioDelete(id)
+        if (resultado > 0) {
+            Toast.makeText(this, "Exercício excluído com sucesso!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Erro ao excluir o exercício.", Toast.LENGTH_SHORT).show()
+        }
     }
 }
