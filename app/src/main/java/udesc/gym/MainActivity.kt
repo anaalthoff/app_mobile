@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (carregarQtdExercicios() == 0) {
-            binding.buttonExecutarTreino.isEnabled = false
+            binding.buttonExecutarTreino.isEnabled = true
             binding.buttonExecutarTreino.setBackgroundColor(Color.parseColor("#7184c7"))
         } else {
             binding.buttonExecutarTreino.isEnabled = true
