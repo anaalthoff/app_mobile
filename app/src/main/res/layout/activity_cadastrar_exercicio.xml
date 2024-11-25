@@ -60,7 +60,7 @@
                 android:textColorHint="#2D3B6E"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nome"
+                android:id="@+id/textInputNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#662D3B6E"
@@ -84,7 +84,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/imagemExercicio"
+                android:id="@+id/textInputImagemExercicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#662D3B6E"
@@ -128,7 +128,6 @@
             app:backgroundTint="#2D3B6E"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="30dp"/>
-
 
     </androidx.cardview.widget.CardView>
 

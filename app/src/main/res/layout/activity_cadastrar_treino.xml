@@ -60,7 +60,7 @@
                 android:textColorHint="#2D3B6E"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nome"
+                android:id="@+id/textInputNomeTreino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#662D3B6E"
@@ -83,7 +83,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/imagemExercicio"
+                android:id="@+id/textInputNomeExercicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#662D3B6E"
@@ -106,7 +106,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nome"
+                android:id="@+id/textInputNumeroSeries"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#662D3B6E"
@@ -129,7 +129,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nome"
+                android:id="@+id/textInputNumeroRepeticoes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#662D3B6E"
@@ -173,8 +173,6 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp" />
         </LinearLayout>
-
-<!--tirei o botão de salvar pois era redundante com o Adicionar neste caso -->
 
     </androidx.cardview.widget.CardView>
 </LinearLayout>
