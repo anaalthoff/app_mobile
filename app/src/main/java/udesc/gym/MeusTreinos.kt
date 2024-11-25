@@ -41,9 +41,14 @@ class MeusTreinos : AppCompatActivity() {
         binding.listViewTreinos.setOnItemClickListener { _, _, position, _ ->
             val treinoSelecionado = listaTreinos[position]
 
-            // Passa os dados do exercício para a tela de edição
-            val intent = Intent(this, EditarTreino::class.java)
-            intent.putExtra("NOME_TREINO", treinoSelecionado.nome)
+            // Cria uma lista com o nome do treino e os exercícios
+            val dadosTreino = arrayListOf<String>()
+            dadosTreino.add(treinoSelecionado.nome) // Adiciona o nome do treino
+            dadosTreino.addAll(treinoSelecionado.listaExercicios.map { it.nome }) // Adiciona os nomes dos exercícios
+
+            // Cria a intent para abrir ExibirTreino
+            val intent = Intent(this, ExibirTreino::class.java)
+            intent.putStringArrayListExtra("dadosTreino", dadosTreino) // Envia os dados
             startActivity(intent)
         }
     }
