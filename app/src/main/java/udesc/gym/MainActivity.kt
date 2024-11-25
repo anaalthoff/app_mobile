@@ -35,15 +35,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonExecutarTreino.setOnClickListener {
-            val intent = Intent(this, Painel::class.java)
+            val intent = Intent(this, CadastrarExecucao::class.java)
             startActivity(intent)
         }
+
     }
 
     private fun carregarQtdExercicios(): Int {
         val sharedPreferences = getSharedPreferences("dados", MODE_PRIVATE)
-        val exerciciosSalvos = sharedPreferences.getString("lista_exercicios", "").orEmpty()
-        return exerciciosSalvos.split("\n").filter { it.isNotEmpty() }.size
+        val treinosSalvos = sharedPreferences.getString("lista_treinos", "").orEmpty()
+        return treinosSalvos.split("\n").filter { it.isNotEmpty() }.size
     }
 
 }

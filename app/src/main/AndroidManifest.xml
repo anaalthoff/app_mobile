@@ -18,6 +18,12 @@
         android:theme="@style/Theme.Gym"
         tools:targetApi="31">
         <activity
+            android:name=".CadastrarExecucao"
+            android:exported="false" />
+        <activity
+            android:name=".MinhasExecucoes"
+            android:exported="false" />
+        <activity
             android:name=".EditarTreino"
             android:exported="false" />
         <activity

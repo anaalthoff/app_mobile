@@ -5,6 +5,7 @@
     <string name="exercicios">Exercícios</string>
     <string name="meus_exercícios">Meus Exercícios</string>
     <string name="meus_treinos">Meus Treinos</string>
+    <string name="minhas_execucoes">Minhas Execuções</string>
     <string name="abdominal_canivete">Abdominal Canivete</string>
     <string name="supino_máquina">Supino Máquina</string>
     <string name="cadastrar">Cadastrar</string>
@@ -23,6 +24,7 @@
     <string name="treinos">Treinos</string>
     <string name="cadastrar_exercícios">Cadastrar Exercícios</string>
     <string name="cadastrar_treinos">Cadastrar Treinos</string>
+    <string name="cadastrar_execucoes">Cadastrar Execuções</string>
     <string name="insira_os_dados_abaixo">Insira os dados abaixo</string>
     <string name="nome_exercicio">Nome</string>
     <string name="nome_treino">Nome</string>
