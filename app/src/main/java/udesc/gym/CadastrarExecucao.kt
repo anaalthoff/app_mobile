@@ -42,6 +42,7 @@ class CadastrarExecucao : AppCompatActivity() {
         binding.buttonSalvar.setOnClickListener {
             val nomeExercicio = binding.textNomeExecucao.text.toString().trim()
 
+
             // Validação simples: o nome do exercício é obrigatório
             if (nomeExercicio.isNotEmpty()) {
                 // Recupera os exercícios já salvos
@@ -52,8 +53,13 @@ class CadastrarExecucao : AppCompatActivity() {
                     treinosSalvos += "\n" // Adiciona uma quebra de linha entre os exercícios
                 }
 
+                val execucao = Execucao(Treino(nomeExercicio))
+
                 // Adiciona apenas o nome do exercício se o link estiver vazio
-                treinosSalvos += nomeExercicio
+                treinosSalvos += execucao.treino.nome
+                if (execucao.dataHoraExecucao.isNotEmpty()) {
+                    treinosSalvos += " - ${execucao.dataHoraExecucao}"
+                }
 
                 // Salva os exercícios atualizados no SharedPreferences
                 val editor = sharedPreferences.edit()
