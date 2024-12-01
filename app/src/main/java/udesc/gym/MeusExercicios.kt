@@ -6,6 +6,8 @@ import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import udesc.gym.databinding.ActivityMeusExerciciosBinding
+import udesc.gym.models.Exercicio
+import udesc.gym.repository.DBHelper
 
 class MeusExercicios : AppCompatActivity() {
 

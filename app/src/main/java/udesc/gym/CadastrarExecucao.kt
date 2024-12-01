@@ -4,23 +4,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import udesc.gym.databinding.ActivityCadastrarExercicioBinding
-import android.Manifest
-import android.app.Activity
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.net.Uri
-import android.os.Build
-import android.provider.MediaStore
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import udesc.gym.databinding.ActivityCadastrarExecucaoBinding
-import udesc.gym.databinding.ActivityCadastrarTreinoBinding
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
+import udesc.gym.models.Execucao
+import udesc.gym.models.Treino
 
 class CadastrarExecucao : AppCompatActivity() {
 

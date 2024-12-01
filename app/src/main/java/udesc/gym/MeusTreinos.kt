@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import udesc.gym.databinding.ActivityMeusTreinosBinding
+import udesc.gym.models.Treino
 
 class MeusTreinos : AppCompatActivity() {
 
