@@ -11,6 +11,7 @@ import java.util.Date
  *      criadoEm: Text
  *      iniciadoEm: Text
  *      finalizadoEm: Text
+ *      ultimaAtualizacaoEm: Text
  *      arquivadoEm: Text
  *      deletadoEm: Text
  */
@@ -19,6 +20,7 @@ data class Execucao(val id: Int,
                     val criadoEm: String = getDateTime(),
                     val iniciadoEm: String,
                     val finalizadoEm: String,
+                    val ultimaAtualizacaoEm: String,
                     val arquivadoEm: String,
                     val deletadoEm: String) {
     companion object {

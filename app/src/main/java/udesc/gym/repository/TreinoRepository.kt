@@ -12,7 +12,7 @@ import udesc.gym.models.Treino
  * Modelo de dados - Treino
  *      id: ID PK autoincrement
  *      nome: Text
- *      validoAte: Text
+ *      criadoEm: Text
  *      dataHoraCriacao: Text
  *      ultimaAtualizacaoEm: Text
  *      arquivadoEm: Text
