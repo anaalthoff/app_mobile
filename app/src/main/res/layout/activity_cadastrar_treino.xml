@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarTreino"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textCadastroTreinos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/cadastrar_treinos"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    android:textColorHint="#2D3B6E"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/outline_close_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textCadastroTreinos"
+                    android:layout_marginEnd="15dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textSubCadastroTreinos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/insira_os_dados_abaixo"
+                android:layout_marginStart="15dp"
+                android:textSize="14sp"
+                android:textColorHint="#2D3B6E"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#662D3B6E"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textNomeTreino"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="@string/nome_do_treino"
+                    android:textSize="16sp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonSalvar"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/salvar_exercicio"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:cornerRadius="10dp"
+            app:backgroundTint="#2D3B6E"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="30dp"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

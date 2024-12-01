@@ -22,14 +22,21 @@ class Painel : AppCompatActivity() {
             finish()
         }
 
-        // Define o OnClickListener para múltiplos elementos
-        val navigateListener = View.OnClickListener {
+        binding.setaExercicio.setOnClickListener {
             val intent = Intent(this, MeusExercicios::class.java)
             startActivity(intent)
         }
-
-        // Aplica o listener aos dois elementos
-        binding.setaExercicio.setOnClickListener(navigateListener)
-        binding.textExercicio.setOnClickListener(navigateListener)
+        binding.textExercicio.setOnClickListener {
+            val intent = Intent(this, MeusExercicios::class.java)
+            startActivity(intent)
+        }
+        binding.setaTreino.setOnClickListener {
+            val intent = Intent(this, MeusTreinos::class.java)
+            startActivity(intent)
+        }
+        binding.textTreino.setOnClickListener {
+            val intent = Intent(this, MeusTreinos::class.java)
+            startActivity(intent)
+        }
     }
 }
